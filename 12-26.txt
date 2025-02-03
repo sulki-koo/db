@@ -1,0 +1,51 @@
+☆ Service Pattern
+★ Facade (퍼셔드) - 아치형 대문
+ : 로직이나 데이터에 접근할 수 있는 방법을 제한(일원화)하는 패턴
+인터페이스로 구현해서 사용함
+
+
+☆ Service / DAO·DO / Singleton Pattern
+
+☆Presentation Layer
+Client => Application, Web Application, Mobile Application
+	↑
+	↓ Facade
+
+☆ Service Layer
+2. Service 만들기 - interface : 변경되지 않음
+3. ServiceImpl 만들기 - 서비스 인터페이스 구현하는 클래스 
+
+☆ Service와 DAO 연결
+5. ServiceImpl에서 DAO를 사용하도록 함
+
+☆ Business Layer
+1. Model 만들기(DO) - class 
+4. DAO - interface : 데이터에 접근하는 오브젝트 : 나중에 변경될 수 있음
+6. DaoImpl 만들기 : DB와 연결
+
+☆ Persistence Layer
+-- DB 와 연결
+= ConnectionUtil 만들기 - Singleton Pattern : 클래스 1개만 만듦
+
+	// static이라 메모리에 connection 객체가 1개만 생김
+	private static ConnectionUtil connectionUtil = new ConnectionUtil();
+	
+	// 다른 곳에서 만들지 못하게 private
+	private ConnectionUtil() {
+	}
+	// getConnectionUtil를 통해서만 가져갈 수 있음
+	public ConnectionUtil getConnectionUtil() {
+		return connectionUtil;
+	}
+
+-- file 과 연결
+
+
+
+
+
+
+
+
+
+
